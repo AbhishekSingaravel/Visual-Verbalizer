@@ -107,7 +107,7 @@ const CaptionGenerationPage = () => {
   return (
     <div>
       <Heading
-        title="Image Caption Generation"
+        title="Visual Verbalizer"
         description="Generate caption for your image."
         icon={ImageIcon}
         iconColor="text-pink-700"
