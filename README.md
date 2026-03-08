@@ -1,74 +1,187 @@
+# 🖼️ Visual Verbalizer – Image Caption Generator
 
-# Image Caption Generator
+## Overview
+Visual Verbalizer is an AI-powered Image Caption Generator that automatically generates meaningful textual descriptions for images. The system combines computer vision and natural language processing techniques to convert visual information into human-readable captions.
 
-This repository contains code for an Image Caption Generator. Follow the steps below to set up and run the client and server components of this project.
+This project uses a deep learning model to analyze image features and generate context-aware descriptions, making it useful for applications such as accessibility tools, content generation, and image indexing.
 
-## Client Setup
+---
 
-### Step 1: Install Dependencies
+## Features
+- Upload images and generate captions automatically
+- AI-powered caption generation
+- Modern web interface for interaction
+- Backend API for image processing and caption generation
+- Secure authentication using Clerk
+- Scalable client-server architecture
 
-Navigate to the `client` directory using the terminal and run the following command to install the required dependencies:
+---
+
+## Tech Stack
+
+### Frontend
+- **Next.js**
+- **React**
+- **Clerk Authentication**
+
+### Backend
+- **Python**
+- **FastAPI**
+- **Uvicorn**
+
+### AI / ML
+- **Deep Learning-based Image Captioning**
+- **OpenAI API**
+- **Computer Vision Techniques**
+
+---
+
+## Project Architecture
+
+```
+User Uploads Image
+        │
+        ▼
+Frontend (Next.js / React)
+        │
+        ▼
+Backend API (FastAPI)
+        │
+        ▼
+AI Model / OpenAI API
+        │
+        ▼
+Generated Caption Returned to User
+```
+
+---
+
+# Client Setup
+
+## Step 1: Install Dependencies
+Navigate to the client directory and install dependencies:
 
 ```bash
 cd client
 npm install
 ```
 
-### Step 2: Configure Environment Variables
+---
 
-Create an `.env` file in the `client` directory and add the following environment variables with your desired values:
+## Step 2: Configure Environment Variables
 
-```plaintext
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pasdasdfsdfsafasdf
-CLERK_SECRET_KEY=asdfsadfasdfasdf
+Create a `.env` file inside the **client** directory.
+
+Example configuration:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
 
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-OPENAI_API_KEY=asdfsadfasdfasdfsda
+OPENAI_API_KEY=your_openai_api_key
 ```
 
-### Step 3: Start the Client
+Replace the placeholder values with your actual credentials.
 
-In the `client` directory, run the following command to start the client application:
+---
+
+## Step 3: Start the Client
+
+Run the following command inside the client directory:
 
 ```bash
 npm run dev
 ```
 
-## Server Setup
+The client application will start locally.
 
-### Step 1: Activate Virtual Environment
+---
 
-Navigate to the `server` directory using the terminal and activate the virtual environment with the following commands:
+# Server Setup
+
+## Step 1: Create and Activate Virtual Environment
+
+Navigate to the server directory:
 
 ```bash
 cd server
-python -m venv .venv (Do this if you dont have .venv directory in your root)
-cd .venv
-cd scripts
-./activate
-cd ..
 ```
 
-### Step 2: Start the Server
-
-Return to the root path of the server directory and start the server using the following command:
+Create a virtual environment if it doesn't exist:
 
 ```bash
-cd ..
+python -m venv .venv
+```
+
+Activate the environment:
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+Linux / Mac:
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## Step 2: Run the Backend Server
+
+Start the FastAPI server using Uvicorn:
+
+```bash
 uvicorn api:app --reload
 ```
 
-The server will start listening on port 8000.
+The server will run at:
 
-## Project Start
+```
+http://localhost:8000
+```
 
-With both the client and server set up and running, you can now use the Image Caption Generator.
+---
 
-Feel free to modify the environment variables and configurations as needed for your project.
+# Running the Project
 
-Make sure to replace the placeholder values in the environment variables with your actual API keys and URLs. This README file provides clear instructions for setting up and running your image caption generator project. 
-"# Visual-Verbalizer" 
+1. Start the backend server
+2. Start the frontend client
+3. Upload an image through the web interface
+4. The system processes the image and generates a caption
+
+---
+
+# Applications
+- Assistive tools for visually impaired users
+- Automatic image description generation
+- Content creation platforms
+- Image indexing and search systems
+
+---
+
+# Future Improvements
+- Improve caption accuracy using larger training datasets
+- Integrate transformer-based vision-language models
+- Add multilingual caption support
+- Deploy as a cloud-based AI service
+
+---
+
+# Author
+
+**Abhishek Singaravel**  
+Backend Developer | AI Enthusiast
+
+LinkedIn:  
+https://linkedin.com/in/abhishek-singaravel-698b35250
+
+GitHub:  
+https://github.com/AbhishekSingaravel
